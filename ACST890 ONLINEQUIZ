@@ -1,0 +1,100 @@
+# ACST_s1_2019
+#Online-quiz 1
+#Question 1
+#(a)
+$ ssh -i 44347707.pem ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com
+$ curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-10-shell-programming--triplet-stop.sh
+$ curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-10-shell-programming--triplet-stop.sh > triplet-stop.sh
+$ ls
+#Explanation: 
+Firstly, we access to our AWS account. Then we use order “curl” to download the program from webset and save it as “triplet-stop.sh” 
+into our AWS account. After that, we list the file in our account and then find that it is inside in our account.
+
+#(b)
+$ chmod u+x triplet-stop.sh
+$ vi triplet-stop.sh
+#!/bin/baih
+# save as triplet-stop.sh
+# splits a sequence into triplets
+x=0
+while [ -n "${1:$x:3}" ]; do
+  seq=$seq${1:$x:3}" "
+  x=$(expr $x + 3)
+  if [ ${1:$x:3} == taa ] && [ $x-ge 9 ]; then
+    break
+  fi
+done
+echo "$seq"
+$ ./triplet-stop.sh taataataataataataataataataa
+taa taa taa
+#the last line is the test answer.
+#Approach:
+Firstly, we use command “chmod u+x triplet-stop.sh” to make the file executable. Then we find the text editor to edit the content 
+inside the file. What we need to edit is to change the condition into “add” and change the second condition with “ true if number
+$x is greater than or equal to 9”. Then we exist from editor. Next, we executive command “:/tiplet-stop.sh taataataataataataataataataa”
+to test the program. Then we can get this is correct answer as it stop after 9 characters with given “taa”.
+
+#Question 2
+#(a)
+$ exit
+$ scp -i  44347707.pem tutes.txt ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com:
+$ ssh -i 44347707.pem ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com
+$ ls
+#Explanation:
+We firstly logout from our account. Then executive “scp” command which means secure copy. We copy the file into our AWS account and
+put it just under the desktop of AWS account by using ”:”. Then we login our account and list the file, we can find it is inside the 
+list.
+
+#(b)
+~$ sort tutes.txt | uniq
+# the lines below is the answer about this command.
+[Tutorial_1|FRI|01:00PM|C13]
+[Tutorial_1|FRI|01:00PM|C14]
+[Tutorial_1|FRI|02:00PM|C15]
+[Tutorial_1|FRI|02:00PM|C16]
+[Tutorial_1|FRI|03:00PM|C17]
+[Tutorial_1|FRI|03:00PM|C18]
+[Tutorial_1|FRI|06:00PM|C19]
+[Tutorial_1|FRI|06:00PM|C20]
+[Tutorial_1|MON|01:00PM|C03]
+[Tutorial_1|MON|01:00PM|C04]
+[Tutorial_1|MON|06:00PM|C01]
+[Tutorial_1|MON|11:00AM|C05]
+[Tutorial_1|MON|11:00AM|C06]
+[Tutorial_1|TUE|02:00PM|C01]
+[Tutorial_1|TUE|03:00PM|C07]
+[Tutorial_1|TUE|03:00PM|C08]
+[Tutorial_1|TUE|04:00PM|C06]
+[Tutorial_1|TUE|04:00PM|C09]
+[Tutorial_1|TUE|04:00PM|C10]
+[Tutorial_1|TUE|05:00PM|C11]
+[Tutorial_1|TUE|05:00PM|C12]
+[Tutorial_1|WED|04:00PM|C13]
+[Tutorial_1|WED|04:00PM|C14]
+[Tutorial_1|WED|05:00PM|C15]
+[Tutorial_1|WED|10:00AM|C09]
+[Tutorial_1|WED|10:00AM|C10]
+ubuntu@ip-172-31-23-136:~$
+#We sort the txt file with condition unique. Then it will list all the unique text line.
+
+#Question 3
+#All question 3 are given example by using data file question3.txt. You can change your file by changing in name of the file 
+after you put in your file data into account.
+#(a)
+$ egrep '^[^ ]+ [^ ]+ [^ ]+$' question31.txt
+
+#(b)
+$ egrep -e '\-[0-9]+' question3.txt
+
+#(c)
+$ egrep '[0-9]+\.[0-9]+' question3.txt
+
+#(d)
+$ egrep ' hydrogenase' question3.txt | egrep -v 'dehydrogenase'
+
+#the detail will shown in pdf which will include all the test answer. 
+
+
+
+
+
