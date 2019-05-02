@@ -1,0 +1,32 @@
+#QUESTION1
+#(a)
+$ ssh -i 44347707.pem ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com
+$ curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb > structure.pdb
+$ ls
+$ sed 's/Beisel/Weisel/' structure.pdb
+
+#(b)
+$ sed '1,3d' structure.pdb
+
+#(c)
+$ sed -n '5,10p' structure.pdb
+
+#(d)
+$ sed '/MET/d' structure.pdb
+
+#(e)
+$ sed -n '/HELIX.*ILE/p' structure.pdb
+
+#(f)
+$ sed '/^H/s/$/***/' structure.pdb
+
+#(g)
+$ sed '/SEQRES/cSEQ' structure.pdb
+
+#(h)
+$ scp -i 44347707.pem jabberwocky.txt ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com:
+$ ssh -i 44347707.pem ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com
+$ ls
+$ sed /^[[:space:]]*$/d jabberwocky.txt
+
+#all explaination and common details are in pdf file
