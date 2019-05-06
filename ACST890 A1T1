@@ -1,0 +1,118 @@
+#Note: after edit or insert each file, using “ :wq ” to quit the interface.
+#Question 1
+$ scp -i  44347707.pem twain.txt ubuntu@ec2-52-65-58-199.ap-southeast-2.compute.amazonaws.com:
+$ ls
+$ python3
+>>> tw=open("twain.txt","r",encoding="utf-8")
+>>> twain=tw.read()
+>>> type(twain)
+>>> twain_new=twain.replace('Hack','HacK')
+>>> print(twain_new)
+
+#Question 2
+$ curl https://introcs.cs.princeton.edu/python/code/stdio.py > stdio.py
+$ vi useragrument.py
+
+#!/usr/bin/python3
+#save as useragrument.py
+import sys
+import stdio
+
+stdio.write('Hi, ')
+stdio.write(sys.argv[1])
+stdio.writeln('. How are you?')
+
+#enter esc
+#enter :wq
+
+#a)
+$ python3 userargument.py python
+#b)
+$ python3 userargument.py 1234 @!&^% 
+#c)
+$ python3 userargument.py 1234   
+#d)
+$ python3 userargument.py Bob  
+#e)
+$ userargument.py Bob 
+#f)
+python3 userargument.py Alice Bob   
+
+#Question 3
+$ vi leap_year_test.py
+
+#!/usr/bin/python3
+# save as leap_year_test.py
+year=int(input("Enter an interger as the year number ", ))
+
+if ((year%400 == 0) or ((year%4 == 0) and (year%100 != 0))):
+    print('leap year')
+
+else:
+    print('not a leap year')
+    
+#enter esc
+#enter :wq
+
+#Question 4
+$ vi random_interger_between_a_b.py
+
+#!/usr/bin/python3
+# save as random_interger_between_a_b.py
+a=int(input(" Enter an interger as the value of a=", ))
+
+b=int(input( "Enter an interger as the value of b=", ))
+import random
+print(random.randint(a,b))
+
+#enter esc
+#enter :wq
+
+#Question 5
+$ vi the_month_test.py
+
+#!/usr/bin/python3
+# save as the_month_test.py
+m=int(input("Enter an interger as month (eg:1 for January)  ", ))
+d=int(input("Enter an interger as day  ", ))
+if (((m==1) or (m==3) or (m==5) or (m==7) or (m==8) or (m==10) or (m==12)) and ((d>=1) and (d<=31))):
+       print('the given date is correct')
+elif ((m==2) and ((d>=1) and (d<=29))):
+       print('the given date is correct')
+elif (((m==4) or (m==6) or (m==9) or (m==11)) and ((d>=1) and (d<=30))):
+       print('the given date is correct')
+else:
+       print('the given date is an incorrect date')
+
+if ((m==3) and (d<=20)):
+    print('Ture')
+elif ((m==6) and (d<=20)):
+    print('Ture')
+elif ((m>3) and (m<6)):
+    print('Ture')
+else:
+    print('False')
+    
+#enter esc
+#enter :wq
+
+#Question 6
+$ vi amount_of_money.py
+
+#!/usr/bin/python3
+# save as amount_of_money.py
+import math
+r=float(input("The annual interest rate is ", ))
+t=float(input("The number of year is ", ))
+P=float(input("The principle is ", ))
+FV=P*math.exp(r*t)
+print('The amount money you would have is', round(FV,2))
+
+#enter esc
+#enter :wq
+
+
+
+
+
+
